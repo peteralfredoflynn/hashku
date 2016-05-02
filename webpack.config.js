@@ -24,6 +24,10 @@ module.exports = {
     },
     resolve: {
       root: __dirname,
+      modulesDirectories: [
+        'node_modules',
+        './app/components'
+      ],
       alias: {
           applicationStyles: 'app/styles/app.scss'
         },
@@ -34,7 +38,7 @@ module.exports = {
           {
               loader: 'babel-loader',
               query: {
-                  presets: ['react', 'es2015']
+                  presets: ['react', 'es2015', 'stage-0']
               },
               test: /\.jsx?$/,
               exclude: /(node_modules|bower_components)/
